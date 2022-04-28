@@ -1,0 +1,19 @@
+import { Fragment } from "react";
+import HorizontalList from "../Components/HorizontalList";
+
+
+export default function Home() {
+
+
+  return (
+    <Fragment>
+      <HorizontalList requestDestination = "top/anime" title = "Top Anime" wait = {500}/>
+      <HorizontalList requestDestination = "top/anime?filter=airing" title = "Currently Airing" wait = {1000}/>
+      <HorizontalList requestDestination = "top/anime?filter=upcoming" title = "Upcoming Anime" wait = {3000}/>
+    </Fragment>
+  ); 
+}
+
+Home.getInitialProps = async (ctx) => {
+  return { props: "test" }
+}
